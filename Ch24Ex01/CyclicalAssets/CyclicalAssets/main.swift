@@ -21,6 +21,9 @@ bob?.useNetWorthChangedHandler { netWorth in
 bob?.takeOwnership(of: laptop!)
 bob?.takeOwnership(of: hat!)
 
+// Ex01 Test
+bob?.resignOwnership(of: hat!)
+
 print("While Bob is alive, hat's owner is \(hat!.owner)")
 bob = nil
 print("the bob variable is now \(bob)")

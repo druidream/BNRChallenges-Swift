@@ -38,6 +38,13 @@ class Person : CustomStringConvertible {
             assets.append(asset)
         }
     }
+    
+    func resignOwnership(of asset: Asset) {
+        accountant.resigned(asset) {
+            asset.owner = nil
+            assets = assets.filter { $0 !== asset }
+        }
+    }
 
     func netWorthDidChange(to netWorth: Double) {
         print("The net worth of \(self) is now \(netWorth)")
